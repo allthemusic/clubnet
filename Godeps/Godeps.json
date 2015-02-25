@@ -1,6 +1,9 @@
 {
-	"ImportPath": "github.com/allthemusic/clubnet",
+	"ImportPath": "github.com/allthemusic/ipfs-clubnet",
 	"GoVersion": "go1.4.1",
+	"Packages": [
+		"./...."
+	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/jtolds/gls",
