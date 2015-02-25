@@ -6,15 +6,19 @@ import (
 )
 
 type Badge struct {
-	Hash  string
 	Token string
 }
 
 func NewBadge(token string) Badge {
-	node := merkledag.Node{}
-	node.Data = []byte(token)
-	multihash, _ := node.Multihash()
-	encoded := b58.Encode(multihash)
+	return Badge{Token: token}
+}
 
-	return Badge{encoded, token}
+func (b *Badge) Hash() (h string, err error) {
+	node := merkledag.Node{}
+	node.Data = []byte(b.Token)
+	multihash, err := node.Multihash()
+	if err != nil {
+		return
+	}
+	return b58.Encode(multihash), nil
 }
