@@ -1,0 +1,4 @@
+package clubnet
+
+func Foo() {
+}

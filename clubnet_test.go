@@ -1,4 +1,4 @@
-package main
+package clubnet
 
 import (
 	. "github.com/smartystreets/goconvey/convey"
